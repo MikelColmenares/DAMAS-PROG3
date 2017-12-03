@@ -4,6 +4,7 @@ public class Main {
 		// TODO Auto-generated method stub
 		Menu m= new Menu();
 		m.main(null);
+		
 	}
 
 }

@@ -64,19 +64,27 @@ public class ventana extends JFrame {
 				//Panel[i][j].repaint();
 				if(p==0) {
 					Panel[i][j].setBackground(Color.BLACK);
+					Panel[i][j].setBounds(60+x, 11+y, 40, 40);
+					getContentPane().add(Panel[i][j]);
 				}else {
-					Panel[i][j].setBackground(Color.LIGHT_GRAY);
-				}
-				Panel[i][j].setBounds(60+x, 11+y, 40, 40);
-				getContentPane().add(Panel[i][j]);
-				
-				x=x+41;
-				if(p==0) {p=1;
+					
 					label[i][j] = new JLabel("New label");b++;
 					label[i][j].setIcon(new ImageIcon(ventana.class.getResource("ficha negra.PNG")));
 					label[i][j].setBounds(60+x, 11+y, 40, 40);
 					getContentPane().add(label[i][j]);
-				}else {p=0;}
+					/*
+					Panel[i][j].setBackground(Color.LIGHT_GRAY);
+					Panel[i][j].setBounds(60+x, 11+y, 40, 40);
+					getContentPane().add(Panel[i][j]);*/
+				}
+				
+				
+				x=x+41;
+
+				/*if(p==0) {p=1;
+					*
+				}else {p=0;}*/
+				if(p==0) {p=1;}else {p=0;}
 			}
 			if(p==0) {p=1;}else {p=0;}
 			x=0;
