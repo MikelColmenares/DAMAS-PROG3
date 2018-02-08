@@ -12,16 +12,18 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.awt.Toolkit;
+
 import javax.swing.JLabel;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 public class ventana extends JFrame implements MouseListener{
-	JPanel[][] Panel = new JPanel[8][8];
-	JLabel[][] label = new JLabel[15][8];
+	
 	/**
 	 * Launch the application.
 	 */
@@ -62,7 +64,8 @@ public class ventana extends JFrame implements MouseListener{
 		lblNewLabel.setBounds(189, 77, 46, 14);
 		getContentPane().add(lblNewLabel);
 		*/
-		
+		JPanel[][] Panel = new JPanel[8][8];
+		JLabel[][] label = new JLabel[15][8];
 		
 		
 		
@@ -83,11 +86,11 @@ public class ventana extends JFrame implements MouseListener{
 					Panel[i][j].setBackground(Color.BLACK);
 					Panel[i][j].setBounds(60+x, 11+y, 40, 40);
 					getContentPane().add(Panel[i][j]);
-				}else{
+				}/*else{
 					Panel[i][j].setBackground(Color.white);
 					Panel[i][j].setBounds(60+x, 11+y, 40, 40);
 					getContentPane().add(Panel[i][j]);
-				}
+				}*/
 				
 				
 				x=x+41;
@@ -119,6 +122,13 @@ public class ventana extends JFrame implements MouseListener{
 					
 					label[i][j] = new JLabel("New label");b++;
 					label[i][j].setIcon(new ImageIcon(ventana.class.getResource("ficha negra.PNG")));
+					
+					/*
+					Image background = Toolkit.getDefaultToolkit().createImage("ficha negra.PNG");
+				    Panel[i][j].drawImage(background, 0, 0, null);
+					
+					
+					
 					
 					/*Graphics g = null;
 					g.create(350, 70, 50, 70);
@@ -165,12 +175,8 @@ public class ventana extends JFrame implements MouseListener{
 					
 					label[i][j] = new JLabel("New label");b++;
 					label[i][j].setIcon(new ImageIcon(ventana.class.getResource("ficha roja.PNG")));
-					label[i][j].addMouseListener(new MouseAdapter() {
-						@Override
-						public void mouseClicked(MouseEvent arg0) {
-							
-						}
-					});
+//					label[i][j].setIcon(new ImageIcon("ficha roja.PNG"));
+					
 					label[i][j].setBounds(60+a, 11+c, 40, 40);
 					getContentPane().add(label[i][j]);
 					/*
@@ -197,6 +203,21 @@ public class ventana extends JFrame implements MouseListener{
 		
 		
 	}
+	/*
+	public static JPanel drawGamePanel(	){
+	    //Create game panel and attributes
+	    JPanel gamePanel = new JPanel();
+	    Image background = Toolkit.getDefaultToolkit().createImage("Background.png");
+	    gamePanel.drawImage(background, 0, 0, null);
+	    //Set Return
+	    return gamePanel;
+	}
+	@Override
+	protected void paintComponent(Graphics g) {
+
+	    super.paintComponent(g);
+	        g.drawImage(bgImage, 0, 0, null);
+	}*/
 
 	@Override
 	public void mouseClicked(MouseEvent arg0) {
