@@ -1,12 +1,10 @@
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-
-import javax.swing.JPanel;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
 
 public class Casilla extends JPanel{
-	private boolean sel = false;
-  	private boolean possivel = false;
+  	private boolean sel = false;
+  	private boolean posible = false;
   	private boolean dama = false;
   	private Color selColor = null;
   	private Color posColor = null;
@@ -21,7 +19,7 @@ public class Casilla extends JPanel{
 		canvas.drawRect(0,0, super.getWidth()-1, super.getHeight()-1);
 		canvas.drawRect(1,1, super.getWidth()-3, super.getHeight()-3);
 	  }
-  	  if (possivel){
+  	  if (posible){
 		canvas.setColor(posColor);
 		canvas.drawRect(0,0, super.getWidth()-1, super.getHeight()-1);
 		canvas.drawRect(1,1, super.getWidth()-3, super.getHeight()-3);
@@ -39,8 +37,8 @@ public class Casilla extends JPanel{
 		repaint();
 	}
 	
-    public void setPossivel(boolean s, Color cor){
-		possivel = s;
+    public void setposible(boolean s, Color cor){
+		posible = s;
 		posColor = cor;
 		repaint();
 	}	
@@ -49,8 +47,8 @@ public class Casilla extends JPanel{
 		dama = valor;
 	}	
 	
-	public boolean isPossivel(){
-		return possivel;
+	public boolean isposible(){
+		return posible;
 	}
 	
 	public boolean isSelected(){
@@ -60,14 +58,4 @@ public class Casilla extends JPanel{
 	public boolean isDama()	{
 		return dama;
 	}
-	
-	// the following methods are used by layout managers
-	public Dimension getPreferredSize()	{
-	  return new Dimension( 50, 50 );
-	}
-	
-	public Dimension getMinimumSize() {
-	  return getPreferredSize();
-	}
-	
 }
